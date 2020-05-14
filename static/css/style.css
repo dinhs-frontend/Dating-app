@@ -1,0 +1,107 @@
+/*#9cdcec - lichtblauw */
+/*#9cb4ec - Donkerblauw*/
+
+body {
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#9cdcec,#ffffff);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #9cdcec;
+    margin: 0;
+    padding: 1rem;
+
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    background-color: white;
+    width: 100%;
+    padding: 0.5rem;
+    max-width: 20rem;
+    border-radius: 15px;
+    margin-top: 7rem;
+    -webkit-box-shadow: 6px 7px 33px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 7px 33px -8px rgba(0,0,0,0.75);
+    box-shadow: 6px 7px 33px -8px rgba(0,0,0,0.75);
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #9cb4ec;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    max-width: 20rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2rem;
+    padding: 0;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+}
+
+.LikeButton {
+    background-color: whitesmoke;
+    color: #9cb4ec;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 52px;
+    text-decoration: none;
+    border: solid 2px;
+    border-color: #9cb4ec;
+    margin: 1rem 1rem 1rem 2rem;
+}
+
+.LikeButton1 {
+    background-color: #9cb4ec;
+    color: white;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 52px;
+    text-decoration: none;
+    border: solid 2px;
+    border-color: #9cb4ec;
+    float: right;
+    margin: 1rem 2rem 1rem 1rem;
+}
