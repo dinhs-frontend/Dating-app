@@ -221,3 +221,10 @@ de middelste verbergen.
 #menuToggle input:checked ~ ul {
     transform: none;
 }
+
+/*---------------------------EJS----------------------------------*/
+
+section {
+    display: flex;
+    justify-content: center;
+}

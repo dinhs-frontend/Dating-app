@@ -1,53 +1,64 @@
 const express = require('express');
 const app = express();
 const port = 2000;
+const bodyParser = require('body-parser');
+const slug = require('slug')
+
+const eten = [
+    {
+        name: 'pasta',
+    },
+
+    {
+        name: 'pho',
+    },
+
+    {
+        name: 'pizza',
+    },
+
+]
+let data = [];
+
 
 app.listen(port);
 app.use(express.static('static')) 
+app.use(bodyParser.urlencoded({extended: true}))
 app.set ('view engine', 'ejs')     
-app.set('views', 'view')   
+app.set('views', 'view')  
 
-// app.get ('/', (req, res) => res.send ('hello world'));
+
 app.get ('/', (req, res) => res.render ('index.ejs'));
+app.get('/topics', topics); //--1--//
+app.post('/topics', add)
+app.get('/add', form); //-2-//
 
-app.get ('/not-found', (req, res, next) => {
-    res.render('not-found.ejs', {
-        title: 'Not found!',
-        showTitle: false, 
-        description: 'Yo bro het werkt niet man SORRY!',
-     });
-});
 
-app.get ('/topics', (req, res, next) => {
-    res.render('topics.ejs', {
-        title: 'test', 
-        showTitle: false,
-        data: [ 'pasta', 'pho', 'pizza', 'patat']
-    });
-});
-
+//error >> kan pagina niet vinden
 app.use(function(req, res, next) {
     res.status(404).render('404.ejs');
-});
+});//--3--//
 
 
+// functies voert uit
+function topics (req,res) {
+    res.render('topics.ejs',{data: eten})
+} ///--1--//
 
-    // .use(function (req, res, next) {
-    //     res
-    //         .status(404)
-    //         .send('That does not exist');
-    // });
 
-// const express = require('express') 
-// const ejs = require('ejs') express()
-// .use(express.static('static'))     
-// .set ('view engine', 'ejs')     
-// .set('views', 'view')     
-// .get('/', home)     
-// .get('/about', about)      
-// .get('/404',notFound) 
-// .get ("/", (req,res) => resend("")) .listen(8000) 
+function form(req, res) {
+    res.render('add.ejs')
+  } //-2-//
 
-// function home (req, res) {     res.status(200).send('server says hello') } 
-// function about (req, res) {     res.status(200).send('about page') } 
-// function notFound(req, res) {     res.status(404).render('not-found.ejs') }
+function add(req, res) {
+    var id = slug(req.body.name).toLowerCase()
+
+    eten.push({
+        id: id,
+        name: req.body.name,
+        
+    })
+
+res.redirect('/topics')
+}
+

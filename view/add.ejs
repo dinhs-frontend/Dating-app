@@ -1,0 +1,21 @@
+<%- include("./header") %>
+    <section>
+        
+            <form method="POST" action="/topics">
+
+            <div class="InputGroup">
+
+                <input type="radio" name="name" id="size_1" value="Pho"/>
+                <label for="size_1">Pho</label>
+
+                <input type="radio" name="name" id="size_2" value="Pasta"/>
+                <label for="size_2">Pasta</label>
+
+                <input type="radio" name="name" id="size_3" value="Pizza"/>
+                <label for="size_3">Pizza</label>
+
+                <button id="savebtn">save</button>
+            </div>
+        </form>
+    </section>
+    <%- include ("./footer") %>
