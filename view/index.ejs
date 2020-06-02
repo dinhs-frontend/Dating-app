@@ -1,13 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="css/style.css">
-        <title>Home</title>
-    </head>
-    <body>
+<%- include("./header") %>
+    <header>
+        <h1>Lufmi</h1>
+        <nav id="navigatie">
+            <div id="menuToggle">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <li>
+                        <img src="" alt=""></li>
+                        <li>
+                            <h1>Lufmi</h1>
+                        </li>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="topics">Topics</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
         <main>
-            <h1>Lufmi</h1>
-            
-        </main>
-    </body>
-</html>
+
+            <article>
+                <h2>Flux</h2>
+                <img src="img/Anna.jpg" alt="Anna">
+                    <p>Hallo ik ben sexy. Wil jij met mij date? kost je geld.
+                    </p>
+                    <a class="LikeButton" href="#">unlike</a>
+                    <a class="LikeButton1" href="#">&#9825;</a>
+                </article>
+            </main>
+
+            <%- include ("./footer") %>
