@@ -3,6 +3,7 @@ const app = express();
 const port = 2000;
 const bodyParser = require('body-parser');
 const slug = require('slug')
+const mongo = require('mongodb');
 
 const eten = [
     {
@@ -18,7 +19,21 @@ const eten = [
     },
 
 ]
-let data = [];
+
+
+require('dotenv').config();
+
+const url = 'mongodb+srv://' + process.env.DB_NAME + ':' + process.env.DB_PSW + '@' + process.env.DB_HOST;
+let db;
+
+mongo.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+    if (err) {
+      throw err;
+    } 
+    db = client.db(process.env.DB_NAME);
+  });
+
+
 
 
 app.listen(port);
@@ -62,3 +77,11 @@ function add(req, res) {
 res.redirect('/topics')
 }
 
+////Mongo test
+// function add(req, res, next) {
+//     db.collection('topics').insertOne({
+//       name: req.body.name,
+      
+//     } 
+//     )
+// }
