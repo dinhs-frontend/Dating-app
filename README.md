@@ -9,4 +9,4 @@ Clone this repository to your local machine:
 `cd Dating-app`
 
 ### Run server
-`cd Dating-app`
+`npm runt start`
