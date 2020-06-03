@@ -32,10 +32,7 @@ mongo.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true
     } 
     db = client.db(process.env.DB_NAME);
   });
-
-
-
-
+ 
 app.listen(port);
 app.use(express.static('static')) 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -47,6 +44,7 @@ app.get ('/', (req, res) => res.render ('index.ejs'));
 app.get('/topics', topics); //--1--//
 app.post('/topics', add)
 app.get('/add', form); //-2-//
+app.delete('/topics', remove)
 
 
 //error >> kan pagina niet vinden
@@ -65,23 +63,49 @@ function form(req, res) {
     res.render('add.ejs')
   } //-2-//
 
-function add(req, res) {
-    var id = slug(req.body.name).toLowerCase()
+function add(req, res, next) {
+    db.collection('topics').insertOne({
+      name: req.body.name,
+    }, done)
 
-    eten.push({
-        id: id,
-        name: req.body.name,
-        
-    })
+    function done(err, eten) {
+        if (err) {
+            next (err)
+        } else {
+            res.redirect('/topics' )
+        }
+      }
+    }
 
-res.redirect('/topics')
-}
-
-////Mongo test
-// function add(req, res, next) {
-//     db.collection('topics').insertOne({
-//       name: req.body.name,
+    function topics(req, res, next) {
+        db.collection('topics').find().toArray(done)
       
-//     } 
-//     )
-// }
+        function done(err, eten) {
+          if (err) {
+            next(err)
+          } else {
+            res.render('topics.ejs', {data: eten})
+          }
+        }
+      } 
+
+      function remove(req, res, next) {
+        var id = req.body.name
+
+      
+        db.collection('topics').deleteOne({
+            _id: ObjectID(id)
+        }, done)
+      
+        function done(err) {
+          if (err) {
+            next(err)
+          } else {
+            res.render('topics.ejs')
+          }
+        }
+      }
+
+      //Bron: github examples
+
+
