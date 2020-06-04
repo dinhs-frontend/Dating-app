@@ -1,5 +1,7 @@
 # Dating-app
-Welkom in mijn Project Tech. De bedoeling van dit project is dat we een feature maken voor een online dating-applicatie. 
+Welkom in mijn Project Tech. De bedoeling van dit project is dat we een feature maken voor een online dating-applicatie.
+De feature die ik heb gemaakt is gericht op het like en uitkomst daarvan.
+Hier onder vind je meer informatie hoe je mijn project kan instaleren.
 
 ![Lufmi](https://github.com/dinhs-frontend/Dating-app/blob/master/Wiki-IMG/homepage.jpg)
 
