@@ -7,20 +7,19 @@ Hier onder vind je meer informatie, hoe je mijn project kan instaleren.
 
 ### Jobstory/feature
 Wanneer we een match zijn, wil ik kunnen zien hoeveel procent we matchen aan de hand van vooraf gekozen topics, zodat ik kan zien of we veel gemeen hebben.
-
+***
 ### How to install
 `$ git https://github.com/dinhs-frontend/Dating-app.git`
-
+***
 ### Navigate to repo
 `cd Dating-app`
-
+***
 ### install
 `npm install`
-
+***
 ### install
 `npm runt start`
-
-
+***
 ### packages
 
 * Body-parser - Pakt data uit het formulier
