@@ -19,3 +19,13 @@ Wanneer we een match zijn, wil ik kunnen zien hoeveel procent we matchen aan de 
 
 ### install
 `npm runt start`
+
+
+### packages
+
+* Body-parser - Pakt data uit het formulier
+* Ejs - JavaScript templates
+* Express - Flexibele Node.js web framework 
+* MongoDB - Opensource database
+* ESLint - Tool die handig is voor het analyseren van fouten in je javascript
+
