@@ -1,7 +1,7 @@
 # Dating-app
 Welkom in mijn Project Tech. De bedoeling van dit project is dat we een feature maken voor een online dating-applicatie. 
 
-![Lufmi](https://github.com/dinhs-frontend/Dating-app/blob/master/Wiki-IMG/Logo.svg)
+![Lufmi](https://github.com/dinhs-frontend/Dating-app/blob/master/Wiki-IMG/homepage.jpg)
 
 ### Jobstory/feature
 Wanneer we een match zijn, wil ik kunnen zien hoeveel procent we matchen aan de hand van vooraf gekozen topics, zodat ik kan zien of we veel gemeen hebben.
