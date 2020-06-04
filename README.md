@@ -14,13 +14,13 @@ Wanneer we een match zijn, wil ik kunnen zien hoeveel procent we matchen aan de 
 ### Navigate to repo
 `cd Dating-app`
 ***
-### install
+### Install
 `npm install`
 ***
-### install
+### Run the app
 `npm runt start`
 ***
-### packages
+### Packages
 
 * Body-parser - Pakt data uit het formulier
 * Ejs - JavaScript templates
