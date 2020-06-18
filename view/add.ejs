@@ -1,47 +1,45 @@
 <%- include("./header") %>
-<header>
-    <h1>Lufmi</h1>
-    <nav id="navigatie">
-        <div id="menuToggle">
-            <input type="checkbox"/>
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-                <li>
-                    <img src="" alt=""></li>
+    <header>
+        <h1>Lufmi</h1>
+        <nav id="navigatie">
+            <div id="menuToggle">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
                     <li>
-                        <h1>Lufmi</h1>
-                    </li>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="topics">Topics</a>
-                    </li>
+                        <img src="" alt=""></li>
+                        <li>
+                            <h1>Lufmi</h1>
+                        </li>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="topics">Topics</a>
+                        </li>
 
-                </ul>
-            </div>
-        </nav>
-    </header>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-    <section>
-        
-            <form method="POST" action="/topics">
+        <section>
+            <form id="topiclijst" method="POST" action="/topics">
+                <div class="InputGroup">
 
-            <div class="InputGroup">
+                    <input type="radio" name="name" id="size_1" value="Pho"/>
+                    <label for="size_1">Pho</label>
 
-                <input type="radio" name="name" id="size_1" value="Pho"/>
-                <label for="size_1">Pho</label>
+                    <input type="radio" name="name" id="size_2" value="Pasta"/>
+                    <label for="size_2">Pasta</label>
 
-                <input type="radio" name="name" id="size_2" value="Pasta"/>
-                <label for="size_2">Pasta</label>
+                    <input type="radio" name="name" id="size_3" value="Pizza"/>
+                    <label for="size_3">Pizza</label>
 
-                <input type="radio" name="name" id="size_3" value="Pizza"/>
-                <label for="size_3">Pizza</label>
+                    <button id="savebtn">save</button>
+            </form>
+        </section>
 
-                <button id="savebtn">save</button>
-            </div>
-        </form>
-    </section>
-    <%- include ("./footer") %>
+        <%- include ("./footer") %>

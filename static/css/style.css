@@ -15,22 +15,43 @@ header {
     margin: 0;
 
 }
+.navigatie1 ul {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 2rem;
+    display: flex;
+    top: 3rem;
+    position: absolute;
+    mar
+}
+
 
 header h1 {
     font-family:'Quicksand', sans-serif;
+    font-size: 3rem;
     padding-top: 1rem;
     text-align: center;
     color: white;
+    position: relative;
+    margin:0;
+    margin-right: 0.5rem
+    
 }
 
-#navigatie h1 {
-    font-family: Arial, Helvetica, sans-serif;
+.navigatie2 h1 {
+    position: relative;
+    font-family:'Quicksand', sans-serif;
     text-align: center;
     color: #9cdcec;
     font-size: 2.5rem;
 }
 
 li {
+    font-family:'Quicksand', sans-serif;
+    font-weight: 700;
     list-style-type: none;
 }
 
@@ -39,7 +60,7 @@ main {
     justify-content: center;
 }
 
-article {
+#user {
     background-color: white;
     width: 100%;
     padding: 0.5rem;
@@ -53,7 +74,7 @@ article {
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Quicksand', sans-serif;
     text-align: center;
     color: #9cb4ec;
     font-size: 2rem;
@@ -70,7 +91,7 @@ img {
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Quicksand', sans-serif;
     margin: 1.5rem;
     padding: 0;
 }
@@ -115,6 +136,7 @@ a {
 
 .LikeButton1 {
     background-color: #9cb4ec;
+    /* background-image: url("heart2.svg"); */
     color: white;
     border-radius: 50%;
     display: inline-block;

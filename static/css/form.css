@@ -5,11 +5,12 @@ section {
 }
 
 h1 {
+    font-family:'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
 }
 
-form {
+#topiclijst {
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -78,5 +79,48 @@ input[type="radio"]:hover:not(:checked) + label {
     background-color: cornflowerblue;
     padding: 1rem;
     border-radius: 5px;
-    height: 2.65rem;rem;
+    height: 2.65rem;
+    border:black;
 }
+/*-------------------------------------------------*/
+
+.yourTopics {
+    margin: 1rem;
+
+}
+
+#topics {
+    position: absolute;
+    margin: 0;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 10px 30px;
+    margin-right: 1rem;
+}
+
+.removebtn {
+    background-color:#9cb4ec;
+    border-radius: 4px;
+    border: white solid 1px;
+    margin-left: 8rem;
+    margin-top: 10px;
+    color: white;
+
+}
+
+#add {
+    font-family:'Quicksand', sans-serif;
+    background-color: cornflowerblue;
+    padding: 0.9rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    height: 1rem;
+    width: 8rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+   
+}
+
