@@ -4,21 +4,22 @@ const port = 2000;
 const bodyParser = require('body-parser');
 const slug = require('slug')
 const mongo = require('mongodb');
+const session = require('express-session')
 
-const eten = [
-    {
-        name: 'pasta',
-    },
+// const eten = [
+//     {
+//         name: 'pasta',
+//     },
 
-    {
-        name: 'pho',
-    },
+//     {
+//         name: 'pho',
+//     },
 
-    {
-        name: 'pizza',
-    },
+//     {
+//         name: 'pizza',
+//     },
 
-]
+// ]
 
 
 require('dotenv').config();
@@ -42,22 +43,30 @@ app.set('views', 'view')
 
 app.get ('/', (req, res) => res.render ('index.ejs'));
 app.get('/topics', topics); //--1--//
-app.post('/topics', add)
+app.post('/topics', add);//-3--//
 app.get('/add', form); //-2-//
-app.delete('/topics', remove)
+app.post('/remove', remove)
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET
+}))
+//------------------------------------------//
+// app.delete ('/topics' , deleteOne);
 
 
 //error >> kan pagina niet vinden
 app.use(function(req, res, next) {
     res.status(404).render('404.ejs');
-});//--3--//
+});
 
 
 // functies voert uit
 function topics (req,res) {
-    res.render('topics.ejs',{data: eten})
-} ///--1--//
+  console.log('Topics data =', data)
 
+    res.render ('topics.ejs',{data: eten})
+} ///--1--//
 
 function form(req, res) {
     res.render('add.ejs')
@@ -66,9 +75,10 @@ function form(req, res) {
 function add(req, res, next) {
     db.collection('topics').insertOne({
       name: req.body.name,
-    }, done)
+      
+    }, done)//-3--//
 
-    function done(err, eten) {
+    function done(err, data) {
         if (err) {
             next (err)
         } else {
@@ -78,9 +88,28 @@ function add(req, res, next) {
     }
 
     function topics(req, res, next) {
+      
         db.collection('topics').find().toArray(done)
       
         function done(err, eten) {
+          console.log('Topics data =', eten)
+          if (err) {
+            next(err)
+          } else {
+            res.render('topics.ejs', {data: eten})
+          }
+        }
+      } 
+//-----------verwijder topics------------//
+      function remove(req, res, next) {
+        var id = req.body.food_id
+
+        db.collection('topics').deleteOne({
+           _id: id
+        }, done)
+      
+        function done(err, eten) {
+          console.log('Topics data =', eten)
           if (err) {
             next(err)
           } else {
@@ -89,23 +118,28 @@ function add(req, res, next) {
         }
       } 
 
-      function remove(req, res, next) {
-        var id = req.body.name
+      //----------------------------------------//
 
-      
-        db.collection('topics').deleteOne({
-            _id: ObjectID(id)
-        }, done)
-      
-        function done(err) {
-          if (err) {
-            next(err)
-          } else {
-            res.render('topics.ejs')
-          }
-        }
-      }
+
+        
+//-----------------------------------------------------///
+// function deleteOne (req, res, next) {
+//   var id = req.body.food_id
+
+// db.collection('topics').deleteOne({
+//            _id: id
+//         }, done)
+
+//         function done(err, eten) {
+//           console.log('Topics data =', eten)
+//           if (err) {
+//             next(err)
+//           } else {
+//             res.render('topics.ejs', {data: eten})
+//           }
+//         }
+//       }
 
       //Bron: github examples
-
+//--------------------------------------------------------//
 
