@@ -21,6 +21,22 @@ const session = require('express-session')
 
 // ]
 
+const persoon1 = [
+  {
+    name: 'Flux',
+    age: '23',
+    hobby: 'netflix',
+  }
+]
+
+const persoon2 = [
+  {
+    name: 'Lauryn',
+    age: '21',
+    hobby: 'netflix',
+  }
+]
+
 
 require('dotenv').config();
 
@@ -92,7 +108,7 @@ function add(req, res, next) {
         db.collection('topics').find().toArray(done)
       
         function done(err, eten) {
-          console.log('Topics data =', eten)
+          // console.log('Topics data =', eten)
           if (err) {
             next(err)
           } else {
@@ -100,12 +116,33 @@ function add(req, res, next) {
           }
         }
       } 
+
+    
 //-----------verwijder topics------------//
+      // function remove(req, res, next) {
+      //   var id = req.body.food_id
+
+      //   db.collection('topics').deleteOne({
+      //      _id: id
+      //   }, done)
+      
+      //   function done(err, eten) {
+      //     console.log('Topics data =', eten)
+      //     if (err) {
+      //       next(err)
+      //     } else {
+      //       res.render('topics.ejs', {data: eten})
+      //     }
+      //   }
+      // } 
+
+      //----------------------------------------//
+        
       function remove(req, res, next) {
         var id = req.body.food_id
 
         db.collection('topics').deleteOne({
-           _id: id
+           _id: new mongo.ObjectID(id)
         }, done)
       
         function done(err, eten) {
@@ -117,9 +154,6 @@ function add(req, res, next) {
           }
         }
       } 
-
-      //----------------------------------------//
-
 
         
 //-----------------------------------------------------///
