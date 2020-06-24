@@ -1,42 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <title>Topics</title>
+        <link rel="stylesheet" href="css/headings.css">
+        <link rel="stylesheet" href="css/form.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <title>Lufmi</title>
     </head>
-    <body>
-        <header>
-            <h1>Lufmi</h1>
-            <nav id="navigatie">
-                <div id="menuToggle">
-                    <input type="checkbox"/>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <ul id="menu">
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <h1>Lufmi</h1>
-                        </li>
-                        <li>
-                            <a href="about.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="topics.html">Topics</a>
-                        </li>
+    <header>
+        <nav class="navigatie1">
+            <ul>
+                <li>
+                    <h1>Lufmi</h1>
+                </li>
+                <li>
+                    <img id="logo" src="img/logo.svg" alt="Lufmi">
+                </li>
+            </ul>
+        </nav>
+        <nav class="navigatie2">
+            <div id="menuToggle">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <li>
+                        <img src="" alt="">
+                    </li>
+                    <li>
+                        <h1>Lufmi</h1>
+                    </li>
+                    <li>
+                        <a href="about.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="topics.html">Topics</a>
+                    </li>
+                    <li>
+                        <a href="account.html">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <section>
+        <h1>Your topics</h1>
 
-        <main>
-            <h1>Topics</h1>
-        </main>
+        <form class="yourTopics" action="/remove" method="POST">
+            <div class="topicList">
+                <span id="topics">Pizza</span>
+                <button class="removebtn" type="submit">x</button>
+            </div>
+            <div class="topicList">
+                <span id="topics">Horror</span>
+                <button class="removebtn" type="submit">x</button>
+            </div>
+            <div class="topicList">
+                <span id="topics">Neflix</span>
+                <button class="removebtn" type="submit">x</button>
+            </div>
+            
+        </form>
+        <div class="addBtn">
+            <a id="add" href="add.html">Add</a>
+        </div>
 
-    </body>
+    </section>
+
+</body>
 </html>

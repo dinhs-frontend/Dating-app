@@ -1,11 +1,13 @@
 section {
     margin-left: auto;
     margin-right: auto;
+    display: block;
+    justify-content: center;
 
 }
 
 h1 {
-    font-family:'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
 }
@@ -14,10 +16,9 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    /* width: 100%; */
-    height: 10rem;
+    width: 100%;
     padding: 0.5rem;
-    /* max-width: 20rem; */
+    max-width: 36rem;
     border-radius: 15px;
     margin-top: 7rem;
     -webkit-box-shadow: 6px 7px 33px -8px rgba(0,0,0,0.75);
@@ -25,6 +26,19 @@ h1 {
     box-shadow: 6px 7px 33px -8px rgba(0,0,0,0.75);
 }
 
+.topicLabel {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    height: 2rem;
+    width: 9rem;
+    padding-top: 0.7rem;
+    text-align: center;
+}
 /*-----------------------*/
 
 /*---------------*/
@@ -32,7 +46,8 @@ h1 {
 .InputGroup {
     display: flex;
     height: 80px;
-    width: 400px;
+    margin-bottom: -1rem;
+    margin-top: 1rem;
 }
 
 /**
@@ -40,14 +55,23 @@ h1 {
     * 2. Ensures the element does not consume any space
     */
 
-input[type="radio"] {
+.InputGroup input[type="checkbox"] {
     visibility: hidden;
     height: 0;
     width: 0;
 
 }
 
-label {
+.nameTopic {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    position: static;
+    margin-right: 4rem;
+    max-width: 1rem;
+    margin-left: 2px;
+}
+
+#labelTopic {
     display: flex;
     flex: auto;
     vertical-align: middle;
@@ -65,62 +89,110 @@ label {
     height: 2rem;
 }
 
-input[type="radio"]:checked + label {
+input[type="checkbox"]:checked + label {
     background-color: #9cdcec;
     color: black;
 }
 
-input[type="radio"]:hover:not(:checked) + label {
-    background-color: #9cdcec;
+input[type="checkbox"]:hover:not(:checked) + label {
+    background-color: #9cb4ec;
     color: black;
 }
 
 #savebtn {
+    margin-left: 1.2rem;
+    margin-right: 5px;
     background-color: cornflowerblue;
     padding: 1rem;
     border-radius: 5px;
-    height: 2.65rem;
-    border:black;
+    height: 2.75rem;
+    border: black;
+    color: white;
 }
 /*-------------------------------------------------*/
 
 .yourTopics {
     margin: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.topicList {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 #topics {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     position: absolute;
     margin: 0;
     color: black;
     background-color: white;
     border-radius: 10px;
-    border: solid 1px black;
-    padding: 10px 30px;
+    padding: 10px 70px;
     margin-right: 1rem;
+    min-width: 4rem;
+    text-align: center;
+}
+
+#topics {
+    -webkit-box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.75);
 }
 
 .removebtn {
-    background-color:#9cb4ec;
+    background-color: #9cb4ec;
     border-radius: 4px;
     border: white solid 1px;
-    margin-left: 8rem;
+    margin-left: 16rem;
     margin-top: 10px;
     color: white;
 
 }
 
 #add {
-    font-family:'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-color: cornflowerblue;
     padding: 0.9rem;
-    margin-top: 1rem;
+    margin-top: -1rem;
     border-radius: 5px;
     height: 1rem;
     width: 8rem;
     color: white;
     text-decoration: none;
     font-weight: 700;
-   
+    justify-content: center;
+    margin-left: 3rem;
+
 }
 
+#session {
+    margin-left: 17rem;
+    padding: 0;
+    position: absolute;
+    /* display: flex; */
+    justify-content: flex-end;
+}
+
+#session label {
+    background-color: whitesmoke;
+}
+
+#accountForm {
+    display: block;
+
+}
+
+#accountForm label {
+    display: block;
+    margin-top: 1rem;
+
+}
+
+input[type=text] {
+    display: block;
+}

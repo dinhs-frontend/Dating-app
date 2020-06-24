@@ -1,7 +1,17 @@
 <%- include("./header") %>
+
     <header>
-        <h1>Lufmi</h1>
-        <nav id="navigatie">
+        <nav class="navigatie1">
+            <ul>
+                <li>
+                    <h1>Lufmi</h1>
+                </li>
+                <li>
+                    <img id="logo" src="img/logo.svg" alt="Lufmi">
+                </li>
+            </ul>
+        </nav>
+        <nav class="navigatie2">
             <div id="menuToggle">
                 <input type="checkbox"/>
                 <span></span>
@@ -9,7 +19,8 @@
                 <span></span>
                 <ul id="menu">
                     <li>
-                        <img src="" alt=""></li>
+                        <img src="" alt="">
+                    </li>
                     <li>
                         <h1>Lufmi</h1>
                     </li>
@@ -19,28 +30,26 @@
                     <li>
                         <a href="topics">Topics</a>
                     </li>
-
+                    <li>
+                        <a href="account">Account</a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
-
     <h1>Common topics</h1>
-
     <% for (var index = 0; index < data.length; index++) { %>
         <section>
             <form class="yourTopics" action="/remove" method="POST">
-                <p id="topics"><%= data[index].name%></p>
-                <label for="food_id" style="display:none;">
+                <span id="topics"><%= data[index].name%></span>
+                <label id="labelTopic" for="food_id" style="display:none;">
                     <input type="text" name="food_id" value=<%= data[index]._id%>>
                 </label>
                 <button class="removebtn" type="submit">x</button>
             </form>
         </section>
-        
     <% } %>
-    <section>
-        <a id="add" href="/add">Add</a>
-    </section>
-
+        <section>
+            <a id="add" href="/add">Add</a>
+        </section>
     <%- include ("./footer") %>

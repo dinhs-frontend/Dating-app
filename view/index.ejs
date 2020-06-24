@@ -1,51 +1,66 @@
 <%- include("./header") %>
-    <header>
-        <nav class="navigatie1" >
+<header>
+    <nav class="navigatie1">
         <ul>
-            <li><h1>Lufmi </h1></li>
-            <li><img id="logo" src="img/logo.svg" alt="Lufmi"> </li>
-            <li></li>
+            <li>
+                <h1>Lufmi</h1>
+            </li>
+            <li>
+                <img id="logo" src="img/logo.svg" alt="Lufmi">
+            </li>
+            <li>
+                
+                <form id="session" action="/topics" method="POST">
+                    <label for="persoon">persoon:</label>
+                    <select id="cars" name="name">
+                <% for (var index = 0; index < data.length; index++) { %>
+                      <option value="<%= data[index].name%>"><%= data[index].name%></option>
+                <% } %> 
+                    <option value="persoon1">Zoë</option>
+                    <option value="persoon2">Joey</option>
+                    </select>
+                    <input type="submit">
+                  </form>
+            
+            </li>
         </ul>
-         </nav>
-        
-       
-        <nav class="navigatie2">
-            <div id="menuToggle">
-                <input type="checkbox"/>
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                    <li>
-                        <img src="" alt=""></li>
-                        <li>
-                            <h1>Lufmi</h1>
-                            
-                        </li>
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="topics">Topics</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main>
-
-            <!-- <article id="user"> -->
-                <form id="user" method="POST" action="/match">
-                <h2>Flux</h2>
-                <img src="img/Anna.jpg" alt="Flux">
-                    <p>Flux 24 jaar oud. Woont in Bussum. Ik hou graag van eten en slapen. Daarnaast werk ik bij de Starbucks als parttimer.
-                    </p>
-                    <a class="LikeButton" href="#"><img src="img/brokeheart.svg" alt=""></a>
-                    <a class="LikeButton1" href="#"><img src="img/heart2.svg" alt=""></a> 
-                    
-                </form>
-                <!-- </article> -->
-            </main>
-
-            <%- include ("./footer") %>
+    </nav>
+    <nav class="navigatie2">
+        <div id="menuToggle">
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li>
+                    <img src="" alt=""></li>
+                <li>
+                    <h1>Lufmi</h1>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="topics">Topics</a>
+                </li>
+                <li>
+                    <a href="account">Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+    <main>
+        <form id="user" method="POST" action="/match">
+            <h2>Flux</h2>
+            <img src="img/Anna.jpg" alt="Flux">
+            <p></p>
+            <a class="LikeButton" href="#">
+                <img src="img/brokeheart.svg" alt="">
+            </a>
+            <a class="LikeButton1" href="#">
+                <img src="img/heart2.svg" alt="">
+            </a>
+        </form>
+     </main>
+<%- include ("./footer") %>

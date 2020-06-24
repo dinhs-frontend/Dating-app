@@ -1,0 +1,54 @@
+<%- include("./header") %>
+<header>
+    <nav class="navigatie1">
+        <ul>
+            <li>
+                <h1>Lufmi</h1>
+            </li>
+            <li>
+                <img id="logo" src="img/logo.svg" alt="Lufmi">
+            </li>
+        </ul>
+    </nav>
+    <nav class="navigatie2">
+        <div id="menuToggle">
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li>
+                    <img src="" alt=""></li>
+                <li>
+                    <h1>Lufmi</h1>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="topics">Topics</a>
+                </li>
+                <li>
+                    <a href="account">Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+    <h1>Account aanmaken</h1>
+    <section>
+        <form id="accountForm" action="/" method="POST">
+            <label for="">Naam</label>
+            <input type="text">
+
+            <label for="">Achternaam</label>
+            <input type="text">
+
+            <label for="">leeftijd</label>
+            <input type="text">
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </section>
+<%- include ("./footer") %>

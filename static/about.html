@@ -8,8 +8,17 @@
     </head>
     <body>
         <header>
-            <h1>Lufmi</h1>
-            <nav id="navigatie">
+            <nav class="navigatie1">
+                <ul>
+                    <li>
+                        <h1>Lufmi</h1>
+                    </li>
+                    <li>
+                        <img id="logo" src="img/logo.svg" alt="Lufmi">
+                    </li>
+                </ul>
+            </nav>
+            <nav class="navigatie2">
                 <div id="menuToggle">
                     <input type="checkbox"/>
                     <span></span>
@@ -28,22 +37,28 @@
                         <li>
                             <a href="topics.html">Topics</a>
                         </li>
-
+                        <li>
+                            <a href="account.html">Account</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
-
-            <article>
-                <h2>Flux</h2>
-                <img src="img/Anna.jpg" alt="Anna">
-                <p>Hallo ik ben sexy. Wil jij met mij date? kost je geld.
-                </p>
-                <a class="LikeButton" href="#">unlike</a>
-                <a class="LikeButton1" href="#">&#9825;</a>
-            </article>
+            <main>
+                <form id="user" method="POST" action="/match">
+                    <h2>Flux</h2>
+                    <img src="img/Anna.jpg" alt="Flux">
+                    <p>Flux 24 jaar oud. Woont in Bussum. Ik hou graag van eten en slapen. Daarnaast
+                        werk ik bij de Starbucks als parttimer.</p>
+                    <a class="LikeButton" href="#">
+                        <img src="img/brokeheart.svg" alt="">
+                    </a>
+                    <a class="LikeButton1" href="#">
+                        <img src="img/heart2.svg" alt="">
+                    </a>
+                </form>
+            </main>
         </main>
-
     </body>
 </html>
